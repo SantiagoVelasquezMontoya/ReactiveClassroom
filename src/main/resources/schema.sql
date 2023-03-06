@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS student_dbo;
+CREATE TABLE student_dbo
+(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(30) NOT NULL UNIQUE,
+    email VARCHAR(150)
+);
+
+DROP TABLE IF EXISTS COURSE;
+CREATE TABLE COURSE
+(
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(30) NOT NULL UNIQUE,
+  	studentId SERIAL,
+  	FOREIGN KEY(studentId) REFERENCES student_dbo(id)
+);
+
+
