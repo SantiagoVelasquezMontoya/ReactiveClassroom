@@ -1,18 +1,15 @@
-DROP TABLE IF EXISTS student_dbo;
-CREATE TABLE student_dbo
+CREATE TABLE if NOT EXISTS student
 (
     id SERIAL PRIMARY KEY,
     name VARCHAR(30) NOT NULL UNIQUE,
     email VARCHAR(150)
 );
 
-DROP TABLE IF EXISTS COURSE;
-CREATE TABLE COURSE
+CREATE TABLE If NOT EXISTS COURSE
 (
-    id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(30) NOT NULL UNIQUE,
-  	studentId SERIAL,
-  	FOREIGN KEY(studentId) REFERENCES student_dbo(id)
+    id INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+  	studentList SERIAL,
+  	FOREIGN KEY(studentList) REFERENCES student(id)
 );
-
 

@@ -1,4 +1,4 @@
-package com.co.ias.Classroom.infrastructure.adapters.jpa.entity.dbo;
+package com.co.ias.Classroom.infrastructure.adapters.jpa.student.entity.dbo;
 
 
 import com.co.ias.Classroom.domain.model.student.Student;
@@ -10,6 +10,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 
+@Table(name = "student")
 public class StudentDBO {
 
     @Id

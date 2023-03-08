@@ -4,7 +4,7 @@ import com.co.ias.Classroom.domain.model.student.Student;
 import com.co.ias.Classroom.domain.model.student.StudentEmail;
 import com.co.ias.Classroom.domain.model.student.StudentId;
 import com.co.ias.Classroom.domain.model.student.StudentName;
-import com.co.ias.Classroom.infrastructure.adapters.jpa.entity.dbo.StudentDBO;
+import com.co.ias.Classroom.infrastructure.adapters.jpa.student.entity.dbo.StudentDBO;
 
 public class StudentDTO {
     private Integer id;

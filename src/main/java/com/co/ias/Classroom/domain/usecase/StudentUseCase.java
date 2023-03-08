@@ -3,7 +3,7 @@ package com.co.ias.Classroom.domain.usecase;
 import com.co.ias.Classroom.domain.gateway.StudentRepository;
 import com.co.ias.Classroom.domain.model.student.Student;
 import com.co.ias.Classroom.domain.model.student.dto.StudentDTO;
-import com.co.ias.Classroom.infrastructure.adapters.jpa.IStudentRepositoryAdapter;
+import reactor.core.publisher.Mono;
 
 public class StudentUseCase {
 
@@ -13,8 +13,7 @@ public class StudentUseCase {
         this.studentRepository = studentRepository;
     }
 
-    public StudentDTO saveStudent(StudentDTO student){
-        StudentDTO saved = new StudentDTO(studentRepository.saveStudent(StudentDTO.toStudent(student)));
-        return saved;
+    public Mono<StudentDTO> saveStudent(StudentDTO student){
+        return studentRepository.saveStudent(StudentDTO.toStudent(student)).map(StudentDTO::new);
     }
 }

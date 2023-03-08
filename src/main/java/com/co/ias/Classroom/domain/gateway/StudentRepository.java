@@ -6,6 +6,6 @@ import reactor.core.publisher.Mono;
 public interface StudentRepository {
 
 
-    public Student saveStudent(Student student);
+    public Mono<Student> saveStudent(Student student);
 
 }
